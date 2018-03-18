@@ -1,0 +1,19 @@
+entity User {
+	username String
+    password String
+    profile Profile
+}
+
+enum Profile {
+	ADMIN, CLIENT
+}
+
+entity Journeys {
+	origin String
+    destiny String
+    date Date
+}
+
+relationship OneToMany {
+	User{Journeys} to Journeys
+}
